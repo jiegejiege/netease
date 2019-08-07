@@ -1,0 +1,75 @@
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+.main{
+  padding:52px 0 50px;
+
+}
+.header{
+  width: 100vw;
+  position: fixed;
+  top:0;
+  height: 50px;
+  z-index: 100;
+}
+.am-carousel img{
+  border-radius: 10px
+}
+.my-list .spe .am-list-extra {
+  flex-basis: initial;
+}
+#mylist .am-list-item-middle {
+    min-height: 58px;
+    
+}
+#mylist .am-list-item-middle span{
+  color:gray;
+  font-size: 13px;
+}
+#mylist .am-list{
+  margin-bottom: 5px;
+}
+
+
+
+
+#Search .hotComment .am-card{
+  background: #ccceb47a
+}
+#Search .hotComment .am-card .am-card-footer-content{
+  flex: 1;
+}
+#Search .hotComment-img .sub-title {
+  
+    color: #888;
+    font-size: 14px;
+    padding: 15px 0 9px 15px;
+  
+  
+}
+#Search .hotComment-img  .not-square-grid .am-grid-icon{
+  width: 40px;
+  height: 60px;
+}
+
+
+#footer{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: white;
+  z-index: 100;
+}
+#footer  img{
+  background: white;
+  height: 50px;
+  width: 50px;
+}
+.am-card-header-content img{
+  width: 60px;
+}
