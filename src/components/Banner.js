@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
-import { Grid } from 'antd-mobile';
 
 
 export class Banner extends Component {
@@ -32,7 +32,6 @@ export class Banner extends Component {
           {this.state.data.map(val => (
             <a
               key={val}
-              href="#"
               style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
             >
               <img

@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 .main{
-  padding:52px 0 50px;
+  padding:52px 0 60px;
 
 }
 .header{
@@ -35,11 +35,13 @@ body {
   margin-bottom: 5px;
 }
 
-
-
-
 #Search .hotComment .am-card{
   background: #ccceb47a
+}
+.hotComment .am-card-body{
+  font-size: 25px;
+  line-height: 30px;
+  font-family: '楷体'
 }
 #Search .hotComment .am-card .am-card-footer-content{
   flex: 1;
@@ -53,10 +55,59 @@ body {
   
 }
 #Search .hotComment-img  .not-square-grid .am-grid-icon{
-  width: 40px;
-  height: 60px;
+  width: 180px;
+  height: 330px;
+}
+#Search .am-grid .am-flexbox .am-flexbox-item .am-grid-item-content {
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 0px 10px;
+}
+.mov{
+  background: white;
+  margin: 0 auto 10px;
+  padding-top: 10px;
+}
+.mov .am-card{
+  min-height: 10px;
+}
+.mov video{
+  width: 94vw;
+  margin: 0 3vw 0;
+  border-radius: 8px;
+}
+.mov  .am-card-header-extra img{
+  width: 30px;
+  height: 30px;
+ 
+}
+.mov .am-card-header-content{
+  white-space: nowrap;
+  font-size: 15px;
+
+}
+.mov .am-card-header-content img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
+
+
+#list_album{
+  position: absolute;
+  top:0;
+  z-index: 200;
+  width: 100vw;
+}
+#list_album .list_l .am-card{
+  min-height: 0;
+}
+#list_album .list_l .am-card-body{
+  padding: 0 15px 0px;
+  line-height: 40px;
+}
 
 #footer{
   position: fixed;

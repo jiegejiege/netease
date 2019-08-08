@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { List } from 'antd-mobile';
 const Item = List.Item;
-const Brief = Item.Brief;
+//const Brief = Item.Brief;
 
 export class Mylist extends Component {
     

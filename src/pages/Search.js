@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, WingBlank, WhiteSpace } from 'antd-mobile';
+import { Card, WingBlank,} from 'antd-mobile';
 import HotComment from '../components/HotComment';
 function Search() {
     

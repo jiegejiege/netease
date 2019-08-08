@@ -1,6 +1,6 @@
 import React from 'react'
 import router from 'umi/router'
-import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
+import { Tabs, Badge } from 'antd-mobile';
 function NavBar() {
     const tabs = [
         { title: <Badge text={''}>我的</Badge> ,a:'My'},
