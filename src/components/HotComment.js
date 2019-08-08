@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { Grid } from 'antd-mobile';
+import { getHotComment } from '../services/all_in_one';
 function HotComment() {
-    const data = Array.from(new Array(9)).map((_val, i) => ({
-        icon: 'http://img4.imgtn.bdimg.com/it/u=2007870969,2735994731&fm=26&gp=0.jpg',
-        text: '这是一段网易云音乐的测试文字',
+      const [data1, setData1] = useState(1);
+      const data = Array.from(data1).map((_val, i) => ({
+        icon: _val.sharePicUrl,
+        text: _val.title,
       }));
-      
+      useEffect(() => {
+    
+        getHotComment().then(res => {
+          //console.log(res.data.hot)
+          
+          setData1(res.data.hot)
+        });
+      }, []);
      
     return (
         <div >

@@ -4,6 +4,9 @@ import Banner from '../components/Banner';
 import RecommendList from '../components/RecommendList';
 
 export class Recommend extends Component {
+    componentDidMount(props){
+        console.log(this.props)
+    }
     render() {
         return (
             <div>

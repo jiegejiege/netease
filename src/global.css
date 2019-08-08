@@ -55,14 +55,17 @@ body {
   
 }
 #Search .hotComment-img  .not-square-grid .am-grid-icon{
-  width: 180px;
-  height: 330px;
+  width: 45vw;;
+ /* / height: 330px; */
 }
 #Search .am-grid .am-flexbox .am-flexbox-item .am-grid-item-content {
   padding: 0;
-  border-radius: 8px;
   overflow: hidden;
-  margin: 0 0px 10px;
+  margin: 10px 0px;
+}
+#Search .am-grid .am-flexbox .am-flexbox-item .am-grid-item-content img{
+  border-radius: 15px;
+  box-shadow: 4px 4px 5px #888963;
 }
 .mov{
   background: white;
@@ -108,19 +111,50 @@ body {
   padding: 0 15px 0px;
   line-height: 40px;
 }
+#Detail{
+  position: absolute;
+  top:0;
+  z-index: 201;
+  width: 100vw;
+  height: 100vh;
+  background: url('http://img4.imgtn.bdimg.com/it/u=3163225063,2729036083&fm=26&gp=0.jpg') no-repeat ;
+  background-size: cover;
 
+}
+#search_album{
+  position: absolute;
+  top:0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: #f1f1f1;
+  z-index: 200;
+}
 #footer{
   position: fixed;
   bottom: 0;
   width: 100vw;
   background: white;
   z-index: 100;
+  
+}
+.footer_contain{
+  padding: 10px;
+  height: 3.125rem;
+  
+}
+.footer_contain span{
+  float: left;
+  display: block;
+  line-height:50px;
+  font-size: 37px;
+  color: rgb(224, 67, 67)
 }
 #footer  img{
-  background: white;
-  height: 50px;
+  float: left;
+  height: 3.125rem;
   width: 50px;
+  border-radius: 50%;
+
 }
-.am-card-header-content img{
-  width: 60px;
-}
+

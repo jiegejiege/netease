@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
-
-
+import { getBanner } from '../services/all_in_one'
+import axios from 'axios'
 export class Banner extends Component {
     state = {
         data: ['1', '2', '3'],
@@ -11,12 +11,16 @@ export class Banner extends Component {
       }
       componentDidMount() {
         // simulate img loading
-        setTimeout(() => {
-          this.setState({
-            data: ['http://p1.music.126.net/8GPZ91i0rBteF33MEPJHHQ==/109951164270648824.jpg',
-             'http://p1.music.126.net/9_dNZTgyyn92UnULaNYLAQ==/109951164270667361.jpg'],
-          });
-        }, 100);
+        axios.get('https://net-music.penkuoer.com/mv/first').then(res=>console.log(res))
+        getBanner().then(res=>
+          {
+          console.log(res.data.banners);
+          this.setState({data:[...res.data.banners]})
+          }
+        )
+        
+        
+
       }
     render() {
         return (
@@ -35,7 +39,7 @@ export class Banner extends Component {
               style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
             >
               <img
-                src={val}
+                src={val.imageUrl}
                 alt=""
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {
