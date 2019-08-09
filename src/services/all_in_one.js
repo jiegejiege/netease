@@ -21,3 +21,12 @@ export function getAlbumDetail(id) {
 export function getHotComment() {
   return get('/hot/topic',{limit:10});
 }
+//获取歌曲URL
+
+export function getSongUrl(id){
+  return get('/song/url',{id:id})
+}
+//获取歌曲详情
+export function getSongDetail(id){
+  return get('/song/detail',{ids:id})
+}

@@ -1,35 +1,43 @@
-import React from 'react'
+
+import React, { Component } from 'react'
 import lyy from '../assets/lyy.jpg'
+import {connect} from 'dva'
 
-
-function Footer() {
-    let audio=document.getElementById('audi')
+let audio=document.getElementById('audi')
+    let playicon=document.getElementById('playicon')
     const play=()=>{
                 if(audio.paused==null||audio.paused===true){
                     audio.play();
+                    playicon.innerHTML="="
                 }else{
                     audio.pause()
+                    playicon.innerHTML="▶"
                 }
         }
-    return (
-        <div id='footer'>
+export class Footer extends Component {
+    componentDidUpdate(){
+        console.log(this.props.songDetail)
+    }
+    render() {
+        return (
+            <div id='footer'>
             <div className='footer_contain'>
-                <div style={{marginLeft:'0px'}}><img src={lyy}  alt=''/></div>
+                <div style={{marginLeft:'0px'}}><img src={this.props.songDetail[this.props.songDetail.length-1].picUrl}  alt=''/></div>
                 <span style={{width:'50vw',overflow:'hidden',height:'50px',whiteSpace:'nowrap',fontSize:'15px'
                 ,color:'black',
                 paddingLeft:'10px'
-            }}>从你的全世界路过</span>
-                <span className='iconfont icon-yduishangyiqu' onClick={()=>( console.log('头像'))}>
-                    
+            }}>{this.props.songDetail[this.props.songDetail.length-1].name}</span>
+                <span >
                     </span>
-                <span onClick={()=>{play()}}>▶ </span>
+                <span id='playicon' onClick={()=>{play()}}>= </span>
                 <span onClick={()=>console.log(('cc'))}
                 style={{float:'right'}}
                 >≡</span>
             </div>
       
         </div>
-    )
+        )
+    }
 }
 
-export default Footer
+export default connect(state=>state.audioResource)(Footer)
