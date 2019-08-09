@@ -6,7 +6,7 @@ function List(props) {
     console.log(props)
     return (
         <div id='list_album'>
-              <div >
+              <div className='list_album_header'>
                     <NavBar
                     mode="light"
                     icon={<Icon type="left" />}

@@ -3,7 +3,14 @@ import lyy from '../assets/lyy.jpg'
 
 
 function Footer() {
-    
+    let audio=document.getElementById('audi')
+    const play=()=>{
+                if(audio.paused==null||audio.paused===true){
+                    audio.play();
+                }else{
+                    audio.pause()
+                }
+        }
     return (
         <div id='footer'>
             <div className='footer_contain'>
@@ -12,10 +19,10 @@ function Footer() {
                 ,color:'black',
                 paddingLeft:'10px'
             }}>从你的全世界路过</span>
-                <span className='iconfont icon-yduishangyiqu' onClick={()=>console.log(('aa'))}>
+                <span className='iconfont icon-yduishangyiqu' onClick={()=>( console.log('头像'))}>
                     
                     </span>
-                <span onClick={()=>console.log(('bb'))}>▶ </span>
+                <span onClick={()=>{play()}}>▶ </span>
                 <span onClick={()=>console.log(('cc'))}
                 style={{float:'right'}}
                 >≡</span>

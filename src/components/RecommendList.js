@@ -56,7 +56,9 @@ function RecommendList() {
               
                 square='false'
                 renderItem={dataItem => (
-                  <div style={{ padding: '0' ,}}>
+                  <div style={{ padding: '0' }} onClick={
+                    ()=>
+( router.push({ pathname : '/list' ,query : { id: dataItem.id } }))}>
                     <img src={dataItem.coverImgUrl} style={{ width: '100px', height: '100px',borderRadius:'8px' }} alt="" />
                     <div style={{ color: '#888', fontSize: '14px', width:'100px',margin:'0 auto',overflow:'hidden',height:'33px'}}>
                       <span>{dataItem.name}</span>

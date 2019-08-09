@@ -2,12 +2,19 @@
 import { Card, WhiteSpace } from 'antd-mobile';
 import router from 'umi/router';
 import React, { Component } from 'react'
-import { parse } from 'qs';
+import { getAlbumDetail } from '../services/all_in_one';
 export default class AlbumList extends Component {
     // location.search.split("=")[1]
-    
+    state={
+        list:[]
+    }
     componentDidMount(){
-        console.log(this.props)
+        console.log(this.props.id )
+        getAlbumDetail(this.props.id).then(res=>(this.setState(
+            {list:[...res.data.playlist.tracks]}
+        )))
+        
+
         // const queryData = parse(window.location.search, {
         //     ignoreQueryPrefix: true, // 忽略掉?
         //   });
@@ -19,30 +26,19 @@ export default class AlbumList extends Component {
         return (
             <div>
             <WhiteSpace size="lg" />
-            <div className='list_l' onClick={()=>{router.push('/detail')}}>
+            {
+                this.state.list.map(item=>(
+                    <div className='list_l' onClick={()=>{router.push('/detail')}} key={item.id}>
                    <Card full>
                    <Card.Body>
-                       <div>绿色</div>
+                       <div>{item.name}</div>
                    </Card.Body>
-                   <Card.Footer content="陈雪凝-绿色" extra={<div>&#xe64e;</div>} />
+                   <Card.Footer content={item.ar[0].name} extra={<div>&#xe64e;</div>} />
                    </Card>
            </div>
-           <div className='list_l'>
-                   <Card full>
-                   <Card.Body>
-                       <div>绿色</div>
-                   </Card.Body>
-                   <Card.Footer content="陈雪凝-绿色" extra={<div>&#xe64e;</div>} />
-                   </Card>
-           </div>
-           <div className='list_l'>
-                   <Card full>
-                   <Card.Body>
-                       <div>绿色</div>
-                   </Card.Body>
-                   <Card.Footer content="陈雪凝-绿色" extra={<div>&#xe64e;</div>} />
-                   </Card>
-           </div>
+                ))
+            }
+           
            
        </div>
         )

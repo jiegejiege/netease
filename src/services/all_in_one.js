@@ -1,4 +1,4 @@
-import { post,get } from '../utils/request';
+import { get } from '../utils/request';
 
 //请求轮播图
 export function getBanner() {
@@ -10,6 +10,11 @@ export function getReco() {
 //获取精品歌单
 export function getNewSong() {
   return get('/top/playlist/highquality',{limit:9});
+}
+
+//获取歌单列表
+export function getAlbumDetail(id) {
+  return get('/playlist/detail',{id:id});
 }
 //获取热门话题
 
